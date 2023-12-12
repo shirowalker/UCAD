@@ -1,2 +1,2 @@
 # UCAD
-Offical code for UCAD in AAAI-24
+Offical code for *Unsupervised Continual Anomaly Detection with Contrastively-learned Prompt* in AAAI-24
