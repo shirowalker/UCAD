@@ -65,6 +65,9 @@ def run(
     run_save_path = patchcore.utils.create_storage_folder(
         results_path, log_project, log_group, mode="iterate"
     )
+    run_save_path_nolimit = patchcore.utils.create_storage_folder(
+        results_path+'_nolimit', log_project, log_group, mode="iterate"
+    )
 
     list_of_dataloaders = methods["get_dataloaders"](seed)
 
@@ -522,7 +525,7 @@ def run(
     basic_result_dataset_names = [results["dataset_name"] for results in result_collect_nolimit]
     basic_result_scores = [list(results.values())[1:] for results in result_collect_nolimit]
     patchcore.utils.compute_and_store_final_results(
-        run_save_path,
+        run_save_path_nolimit,
         basic_result_scores,
         column_names=basic_result_metric_names,
         row_names=basic_result_dataset_names,
